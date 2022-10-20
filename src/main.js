@@ -47,7 +47,7 @@ const cardNumberPatter = {
   mask: [
     {
       mask: "0000 0000 0000 0000",
-      regex: /^4\d{0,15}/ ,
+      regex: /^4\d{0,15}/,
       cardType: "visa",
     },
     {
@@ -108,11 +108,11 @@ function updateCardNumber(number) {
   ccNumber.innerText = number.length === 0 ? "1234 5678 9012 3456" : number
 }
 
-expirationDateMasked.on("accept", () =>{
-updateExpirationDate(expirationDateMasked.value)
+expirationDateMasked.on("accept", () => {
+  updateExpirationDate(expirationDateMasked.value)
 })
 
-function updateExpirationDate(date){
+function updateExpirationDate(date) {
   const ccExpiration = document.querySelector(".cc-extra .value")
   ccExpiration.innerText = date.length === 0 ? "02/32" : date
 }
